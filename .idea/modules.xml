@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/challenges.iml" filepath="$PROJECT_DIR$/challenges.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hackerrank/hackerrank.iml" filepath="$PROJECT_DIR$/hackerrank/hackerrank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leetcode/leetcode.iml" filepath="$PROJECT_DIR$/leetcode/leetcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projecteuler/projecteuler.iml" filepath="$PROJECT_DIR$/projecteuler/projecteuler.iml" />
+    </modules>
+  </component>
+</project>
