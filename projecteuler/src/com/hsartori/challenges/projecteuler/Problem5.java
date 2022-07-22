@@ -18,7 +18,7 @@ public final class Problem5 extends Problem {
 
     @Override
     protected Object solve() {
-        final SortedSet<Integer> range = range(11, 20);
+        final SortedSet<Long> range = range(11, 20);
         final double base = multiply(range);
         for (long i = range.last(); i <= base; i += range.last()) {
 
