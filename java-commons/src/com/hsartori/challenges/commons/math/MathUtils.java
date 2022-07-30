@@ -1,5 +1,7 @@
 package com.hsartori.challenges.commons.math;
 
+import java.text.NumberFormat;
+import java.text.ParsePosition;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -7,6 +9,12 @@ import java.util.TreeSet;
 import static java.lang.Math.*;
 
 public class MathUtils {
+
+    public static boolean isNumeric(String str) {
+        ParsePosition pos = new ParsePosition(0);
+        NumberFormat.getInstance().parse(str, pos);
+        return str.length() == pos.getIndex();
+    }
 
     public static boolean isPalindrome(long n) {
         return String.valueOf(n).equals(new StringBuilder().append(n).reverse().toString());
