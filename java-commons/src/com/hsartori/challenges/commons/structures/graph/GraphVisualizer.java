@@ -1,4 +1,4 @@
-package com.hsartori.challenges.commons.graph;
+package com.hsartori.challenges.commons.structures.graph;
 
 import java.util.HashSet;
 import java.util.PriorityQueue;

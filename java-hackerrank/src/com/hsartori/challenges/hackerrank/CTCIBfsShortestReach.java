@@ -1,8 +1,8 @@
 package com.hsartori.challenges.hackerrank;
 
-import com.hsartori.challenges.commons.graph.Edge;
-import com.hsartori.challenges.commons.graph.Graph;
-import com.hsartori.challenges.commons.graph.Node;
+import com.hsartori.challenges.commons.structures.graph.Edge;
+import com.hsartori.challenges.commons.structures.graph.Graph;
+import com.hsartori.challenges.commons.structures.graph.Node;
 
 import java.util.*;
 

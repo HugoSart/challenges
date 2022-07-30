@@ -4,12 +4,11 @@ import com.hsartori.challenges.commons.structures.tree.BinarySearchTree;
 
 import java.util.Scanner;
 
-public class TreeHeightOfABinaryTree {
+public class TreeLevelOrderTransversal {
 
     public static void main(String[] args) {
         final BinarySearchTree<Integer> tree = readEntry();
-        final int height = tree.height();
-        System.out.println(height);
+        tree.forEachTransversal(node -> System.out.print(node.value + " "));
     }
 
     private static BinarySearchTree<Integer> readEntry() {

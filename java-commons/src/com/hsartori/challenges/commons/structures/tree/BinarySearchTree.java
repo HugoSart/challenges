@@ -1,29 +1,28 @@
-package com.hsartori.challenges.commons.btree;
+package com.hsartori.challenges.commons.structures.tree;
 
-import java.util.LinkedList;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Consumer;
 
-public class BinaryTree<T> {
-    public BinaryNode<T> root;
+public class BinarySearchTree<T> {
+    public Node<T> root;
 
-    BinaryTree(BinaryNode<T> root) {
+    BinarySearchTree(Node<T> root) {
         this.root = root;
     }
 
-    public BinaryTree() {
+    public BinarySearchTree() {
         this.root = null;
     }
 
-    public BinaryTree(T value) {
-        this.root = new BinaryNode<>(value);
+    public BinarySearchTree(T value) {
+        this.root = new Node<>(value);
     }
 
-    public BinaryTree(Iterable<T> values) {
+    public BinarySearchTree(Iterable<T> values) {
         values.forEach(this::add);
     }
 
-    public BinaryTree(T ...values) {
+    public BinarySearchTree(T ...values) {
         for (T value : values) {
             add(value);
         }
@@ -31,13 +30,13 @@ public class BinaryTree<T> {
 
     public int height() {
         int height = 0;
-        final LinkedList<BinaryNode<T>> nodesInLevel = new LinkedList<>(Set.of(root));
+        final LinkedList<Node<T>> nodesInLevel = new LinkedList<>(Set.of(root));
         while (!nodesInLevel.isEmpty()) {
             height++;
             // System.out.println(nodesInLevel.stream().map(s -> s.value.toString()).collect(Collectors.joining(", ")));
             int count = nodesInLevel.size();
             while (count-- > 0) {
-                final BinaryNode<T> curr = nodesInLevel.poll();
+                final Node<T> curr = nodesInLevel.poll();
                 if (curr.left != null) {
                     nodesInLevel.add(curr.left);
                 }
@@ -50,13 +49,13 @@ public class BinaryTree<T> {
     }
 
     public void add(final T key) {
-        final BinaryNode<T> node = new BinaryNode<>(key);
+        final Node<T> node = new Node<>(key);
         if (root == null) {
             root = node;
             return;
         }
-        BinaryNode<T> prev = null;
-        BinaryNode<T> temp = root;
+        Node<T> prev = null;
+        Node<T> temp = root;
         while (temp != null) {
             if (temp.value.hashCode() > key.hashCode()) {
                 prev = temp;
@@ -73,16 +72,28 @@ public class BinaryTree<T> {
         }
     }
 
-    static class BinaryNode<T> {
-        T value;
-        BinaryNode<T> left;
-        BinaryNode<T> right;
+    public void forEachTransversal(final Consumer<Node<T>> consumer) {
+        final Queue<Node<T>> queue = new LinkedList<>(List.of(root));
+        while (!queue.isEmpty()) {
+            final Node<T> curr = queue.poll();
+            consumer.accept(curr);
+            if (curr.left != null)
+                queue.add(curr.left);
+            if (curr.right != null)
+                queue.add(curr.right);
+        }
+    }
 
-        BinaryNode(T value) {
+    public static class Node<T> {
+        public T value;
+        public Node<T> left;
+        public Node<T> right;
+
+        Node(T value) {
             this.value = value;
         }
 
-        BinaryNode(T value, BinaryNode<T> left, BinaryNode<T> right) {
+        Node(T value, Node<T> left, Node<T> right) {
             this.value = value;
             this.left = left;
             this.right = right;
@@ -96,7 +107,7 @@ public class BinaryTree<T> {
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            BinaryNode<?> that = (BinaryNode<?>) o;
+            Node<?> that = (Node<?>) o;
             return Objects.equals(value, that.value);
         }
 
