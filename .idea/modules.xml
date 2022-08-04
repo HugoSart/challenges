@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/challenges.iml" filepath="$PROJECT_DIR$/challenges.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-commons/java-commons.iml" filepath="$PROJECT_DIR$/java-commons/java-commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-hackerrank/java-hackerrank.iml" filepath="$PROJECT_DIR$/java-hackerrank/java-hackerrank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-interviewbit/java-interviewbit.iml" filepath="$PROJECT_DIR$/java-interviewbit/java-interviewbit.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-interviews/java-interviews.iml" filepath="$PROJECT_DIR$/java-interviews/java-interviews.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-leetcode/java-leetcode.iml" filepath="$PROJECT_DIR$/java-leetcode/java-leetcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-projecteuler/java-projecteuler.iml" filepath="$PROJECT_DIR$/java-projecteuler/java-projecteuler.iml" />
